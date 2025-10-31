@@ -3,19 +3,23 @@ module github.com/iskanye/utilities-payment-payment
 go 1.25.3
 
 require (
+	github.com/brianvoe/gofakeit/v6 v6.28.0
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.3.2
 	github.com/iskanye/utilities-payment v0.0.0-20251030204707-d5f12eaf7ca0
 	github.com/iskanye/utilities-payment-proto v0.0.0-20251031102638-856944d7f608
+	github.com/stretchr/testify v1.10.0
 	google.golang.org/grpc v1.76.0
 )
 
 require (
 	github.com/BurntSushi/toml v1.5.0 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/ilyakaznacheev/cleanenv v1.5.0 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
 	golang.org/x/net v0.46.0 // indirect
 	golang.org/x/sys v0.37.0 // indirect
 	golang.org/x/text v0.30.0 // indirect
