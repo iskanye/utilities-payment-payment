@@ -26,15 +26,15 @@ type Billing interface {
 func New(
 	host string,
 	port int,
-) (clientApi, error) {
+) (*clientApi, error) {
 	cc, err := grpc.NewClient(
 		net.JoinHostPort(host, strconv.Itoa(port)),
 		grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
-		return clientApi{}, status.Error(codes.Unavailable, err.Error())
+		return &clientApi{}, status.Error(codes.Unavailable, err.Error())
 	}
 
-	return clientApi{billing.NewBillingClient(cc)}, nil
+	return &clientApi{billing.NewBillingClient(cc)}, nil
 }
 
 func (c *clientApi) PayBill(

@@ -1,0 +1,16 @@
+# ./Taskfile.yaml
+# See: https://taskfile.dev/api/  
+
+version: "3"  
+
+tasks:  
+  default:
+    cmds:
+      - task: payment  
+  payment:
+    cmds:
+      - go run ./cmd/payment --config=./config/dev.yaml
+
+  test:
+    cmds:
+      - go run ./cmd/payment --config=./config/tests.yaml
