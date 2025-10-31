@@ -3,22 +3,14 @@ package payproc
 
 import (
 	"context"
-	"fmt"
 
-	"github.com/iskanye/utilities-payment-payment/internal/grpc/billing"
 	"github.com/iskanye/utilities-payment-payment/internal/grpc/payment"
 )
 
-type PaymentProcessor struct {
-	billing billing.Billing
-}
+type PaymentProcessor struct{}
 
-func New(
-	billing billing.Billing,
-) *PaymentProcessor {
-	return &PaymentProcessor{
-		billing: billing,
-	}
+func New() *PaymentProcessor {
+	return &PaymentProcessor{}
 }
 
 func (p *PaymentProcessor) ProcessPayment(
@@ -28,10 +20,7 @@ func (p *PaymentProcessor) ProcessPayment(
 ) (payment.PaymentStatus, error) {
 	const op = "lib.payproc.ProcessPayment"
 
-	err := p.billing.PayBill(ctx, billID)
-	if err != nil {
-		return payment.PAYMENT_FAILED, fmt.Errorf("%s: %w", op, err)
-	}
+	// Some payment processing here...
 
 	return payment.PAYMENT_OK, nil
 }

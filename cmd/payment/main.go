@@ -14,10 +14,10 @@ import (
 func main() {
 	cfg := pkgConfig.MustLoad[config.Config]()
 	log := logger.SetupPrettySlog()
-	app := app.New(log, cfg.Billing.Host, cfg.Billing.Port, cfg.Port)
+	app := app.New(log, cfg.Port)
 
 	go func() {
-		app.PaymentServer.MustRun()
+		app.GRPCApp.MustRun()
 	}()
 
 	// Graceful shutdown
@@ -26,6 +26,6 @@ func main() {
 
 	<-stop
 
-	app.PaymentServer.Stop()
+	app.GRPCApp.Stop()
 	log.Info("Gracefully stopped")
 }
