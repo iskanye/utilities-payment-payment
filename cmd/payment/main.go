@@ -14,7 +14,7 @@ import (
 func main() {
 	cfg := pkgConfig.MustLoad[config.Config]()
 	log := logger.SetupPrettySlog()
-	app := app.New(log, cfg.Port)
+	app := app.New(log, cfg.GRPC.Port)
 
 	go func() {
 		app.GRPCApp.MustRun()

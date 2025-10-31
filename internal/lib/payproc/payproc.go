@@ -16,7 +16,6 @@ func New() *PaymentProcessor {
 func (p *PaymentProcessor) ProcessPayment(
 	ctx context.Context,
 	amount int,
-	billID int64,
 ) (payment.PaymentStatus, error) {
 	const op = "lib.payproc.ProcessPayment"
 

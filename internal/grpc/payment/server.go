@@ -27,7 +27,6 @@ type Payment interface {
 	ProcessPayment(
 		ctx context.Context,
 		amount int,
-		bill_id int64,
 	) (protoPayment.PaymentStatus, error)
 }
 
@@ -40,15 +39,16 @@ func (s *serverAPI) ProcessPayment(
 	in *protoPayment.PaymentRequest,
 ) (*protoPayment.PaymentResponse, error) {
 	if in.Amount <= 0 {
-		return nil, status.Error(codes.InvalidArgument, "amount must be positive")
-	}
-	if in.BillId == 0 {
-		return nil, status.Error(codes.InvalidArgument, "bill_id is required")
+		return &protoPayment.PaymentResponse{
+			Status: PAYMENT_FAILED,
+		}, status.Error(codes.InvalidArgument, "amount must be positive")
 	}
 
-	statusCode, err := s.payment.ProcessPayment(ctx, int(in.GetAmount()), in.GetBillId())
+	statusCode, err := s.payment.ProcessPayment(ctx, int(in.GetAmount()))
 	if err != nil {
-		return nil, status.Error(codes.Internal, err.Error())
+		return &protoPayment.PaymentResponse{
+			Status: PAYMENT_FAILED,
+		}, status.Error(codes.Internal, err.Error())
 	}
 
 	return &protoPayment.PaymentResponse{

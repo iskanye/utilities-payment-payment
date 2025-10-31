@@ -18,7 +18,6 @@ type PaymentProcessor interface {
 	ProcessPayment(
 		ctx context.Context,
 		amount int,
-		bill_id int64,
 	) (payment.PaymentStatus, error)
 }
 
@@ -35,21 +34,20 @@ func New(
 func (b *Payment) ProcessPayment(
 	ctx context.Context,
 	amount int,
-	bill_id int64,
 ) (payment.PaymentStatus, error) {
 	const op = "Payment.ProcessPayment"
 
 	log := b.log.With(
 		slog.String("op", op),
-		slog.Int64("bill_id", bill_id),
+		slog.Int("amount", amount),
 	)
 
 	log.Info("attempting to process payment")
 
-	status, err := b.paymentProcessor.ProcessPayment(ctx, amount, bill_id)
+	status, err := b.paymentProcessor.ProcessPayment(ctx, amount)
 	if err != nil {
 		log.Error("failed to process payment", logger.Err(err))
-		return 0, fmt.Errorf("%s: %w", op, err)
+		return payment.PAYMENT_FAILED, fmt.Errorf("%s: %w", op, err)
 	}
 
 	log.Info("payment processed",

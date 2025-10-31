@@ -1,12 +1,12 @@
 package config
 
+import "time"
+
 type Config struct {
-	Host    string   `yaml:"host" env-default:"localhost"`
-	Port    int      `yaml:"port" env-required:"true"`
-	Billing HostPort `yaml:"billing"`
+	GRPC GRPCConfig `yaml:"grpc"`
 }
 
-type HostPort struct {
-	Host string `yaml:"host" env-default:"localhost"`
-	Port int    `yaml:"port" env-required:"true"`
+type GRPCConfig struct {
+	Port    int           `yaml:"port"`
+	Timeout time.Duration `yaml:"timeout"`
 }
