@@ -25,6 +25,8 @@ github.com/iskanye/utilities-payment v0.0.0-20251030204707-d5f12eaf7ca0 h1:9Ry3/
 github.com/iskanye/utilities-payment v0.0.0-20251030204707-d5f12eaf7ca0/go.mod h1:4+J0gZDB0fUHrjnA9RGcn35qkOTyhiFSrAa/qjQC/4Y=
 github.com/iskanye/utilities-payment-proto v0.0.0-20251031102638-856944d7f608 h1:LWQhhhLmd0EfNi2XdO/69M8wbuz4EeH5hrAjmTLk3T8=
 github.com/iskanye/utilities-payment-proto v0.0.0-20251031102638-856944d7f608/go.mod h1:Y80c5i/ywsTgICyJyE67aWU1CtSsdF7g1nqAYXXPFxs=
+github.com/iskanye/utilities-payment-proto v0.1.0 h1:L9fPGQ7dPPIDwYEwbeU7bTSquSyiKpC9rHi/2jFBfMw=
+github.com/iskanye/utilities-payment-proto v0.1.0/go.mod h1:Y80c5i/ywsTgICyJyE67aWU1CtSsdF7g1nqAYXXPFxs=
 github.com/joho/godotenv v1.5.1 h1:7eLL/+HRGLY0ldzfGMeQkb7vMd0as4CfYvUVzLqw0N0=
 github.com/joho/godotenv v1.5.1/go.mod h1:f4LDr5Voq0i2e/R5DDNOoa2zzDfwtkZa6DnEwAbqwq4=
 github.com/mattn/go-colorable v0.1.14 h1:9A9LHSqF/7dyVVX6g0U9cwm9pG3kP9gSzcuIPHPsaIE=
