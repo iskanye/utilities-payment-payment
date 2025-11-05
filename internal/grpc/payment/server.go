@@ -27,7 +27,7 @@ type Payment interface {
 	ProcessPayment(
 		ctx context.Context,
 		amount int,
-	) (protoPayment.PaymentStatus, error)
+	) (PaymentStatus, error)
 }
 
 func Register(gRPCServer *grpc.Server, payment Payment) {
