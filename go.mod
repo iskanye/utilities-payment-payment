@@ -5,8 +5,8 @@ go 1.25.3
 require (
 	github.com/brianvoe/gofakeit/v6 v6.28.0
 	github.com/grpc-ecosystem/go-grpc-middleware/v2 v2.3.3
-	github.com/iskanye/utilities-payment v0.0.0-20251105123748-7de6181755be
 	github.com/iskanye/utilities-payment-proto v0.1.1
+	github.com/iskanye/utilities-payment-utils v0.1.1
 	github.com/stretchr/testify v1.10.0
 	google.golang.org/grpc v1.76.0
 )

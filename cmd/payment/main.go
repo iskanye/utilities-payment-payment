@@ -7,8 +7,8 @@ import (
 
 	"github.com/iskanye/utilities-payment-payment/internal/app"
 	"github.com/iskanye/utilities-payment-payment/internal/config"
-	pkgConfig "github.com/iskanye/utilities-payment/pkg/config"
-	"github.com/iskanye/utilities-payment/pkg/logger"
+	pkgConfig "github.com/iskanye/utilities-payment-utils/pkg/config"
+	"github.com/iskanye/utilities-payment-utils/pkg/logger"
 )
 
 func main() {

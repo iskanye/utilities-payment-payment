@@ -6,7 +6,7 @@ import (
 	"log/slog"
 
 	"github.com/iskanye/utilities-payment-payment/internal/grpc/payment"
-	"github.com/iskanye/utilities-payment/pkg/logger"
+	"github.com/iskanye/utilities-payment-utils/pkg/logger"
 )
 
 type Payment struct {

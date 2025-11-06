@@ -9,7 +9,7 @@ import (
 
 	"github.com/iskanye/utilities-payment-payment/internal/config"
 	"github.com/iskanye/utilities-payment-proto/payment"
-	pkgConfig "github.com/iskanye/utilities-payment/pkg/config"
+	pkgConfig "github.com/iskanye/utilities-payment-utils/pkg/config"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 )
